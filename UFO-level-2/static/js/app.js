@@ -17,7 +17,9 @@ tableData.forEach((alienLanding) => {
 var button = d3.select("#filter-btn");
 
 // Select the form
-var form = d3.select("#form-group");
+var form = d3.select("form");
+
+form.attr("id", "form");
 
 // Create event handlers 
 button.on("click", runEnter);
@@ -42,6 +44,12 @@ function runEnter() {
   var inputValue3 = inputElement3.property("value");
   var inputValue4 = inputElement4.property("value");
   var inputValue5 = inputElement5.property("value");
+
+  console.log(inputValue1)
+  console.log(inputValue2)
+  console.log(inputValue3)
+  console.log(inputValue4 === "")
+  console.log(inputValue5)
 
   function selectEvent(event){
   return event.datetime === inputValue1 && 
