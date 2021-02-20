@@ -23,7 +23,7 @@ form.attr("id", "form");
 
 // Create event handlers 
 button.on("click", runEnter);
-form.on("submit",runEnter);
+form.on("change", runEnter);
 
 // Complete the event handler function for the form
 function runEnter() {
