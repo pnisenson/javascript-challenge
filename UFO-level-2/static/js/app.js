@@ -45,19 +45,26 @@ function runEnter() {
   var inputValue4 = inputElement4.property("value");
   var inputValue5 = inputElement5.property("value");
 
-  console.log(inputValue1)
-  console.log(inputValue2)
-  console.log(inputValue3)
-  console.log(inputValue4 === "")
-  console.log(inputValue5)
-
+//   function selectEvent(event){
+//   return event.datetime === inputValue1 && 
+//     event.city === inputValue2 &&
+//     event.state === inputValue3 &&
+//     event.country === inputValue4 &&
+//     event.shape === inputValue5
+// };
+  
   function selectEvent(event){
-  return event.datetime === inputValue1 && 
-    event.city === inputValue2 &&
-    event.state === inputValue3 &&
-    event.country === inputValue4 &&
-    event.shape === inputValue5
-};
+    var catchlist = []
+    if (inputValue1 != "") {catchlist.push(event.datetime === inputValue1)} else {catchlist.push(true)};
+    if (inputValue2 != "") {catchlist.push(event.city === inputValue2)} else {catchlist.push(true)};
+    if (inputValue3 != "") {catchlist.push(event.state === inputValue3)} else {catchlist.push(true)};
+    if (inputValue4 != "") {catchlist.push(event.country === inputValue4)} else {catchlist.push(true)};
+    if (inputValue5 != "") {catchlist.push(event.shape === inputValue5)} else {catchlist.push(true)};
+    console.log(catchlist[0], catchlist[1], catchlist[2], catchlist[3], catchlist[4])
+    return catchlist[0] && catchlist[1] && catchlist[2] && catchlist[3] && catchlist[4]
+
+    };
+
   var filteredData = tableData.filter(selectEvent);
 
   console.log(filteredData);
