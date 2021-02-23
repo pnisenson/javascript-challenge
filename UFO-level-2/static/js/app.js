@@ -2,7 +2,7 @@
 var tableData = data;
 
 // YOUR CODE HERE!
-// Need to select 'tbody' tag to append dat to
+// Need to select 'tbody' tag to append data to
 var tableBody = d3.select('tbody');
 
 tableData.forEach((alienLanding) => {
@@ -44,14 +44,6 @@ function runEnter() {
   var inputValue3 = inputElement3.property("value");
   var inputValue4 = inputElement4.property("value");
   var inputValue5 = inputElement5.property("value");
-
-//   function selectEvent(event){
-//   return event.datetime === inputValue1 && 
-//     event.city === inputValue2 &&
-//     event.state === inputValue3 &&
-//     event.country === inputValue4 &&
-//     event.shape === inputValue5
-// };
   
   function selectEvent(event){
     var catchlist = []
